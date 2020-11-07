@@ -9,6 +9,7 @@ import it.phibonachos.utils.FunctionalWrapper;
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Method;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -28,8 +29,8 @@ public class ScoreEvaluator<Target> extends AbstractEvaluator<Target, Integer, S
     }
 
     @Override
-    protected Function<Method, Boolean> sortPredicate() {
-        return (i) -> true;
+    public Comparator<Method> comparingPredicate() {
+        return (m1, m2) -> 0;
     }
 
     @Override
